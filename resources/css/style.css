@@ -217,12 +217,25 @@ html, button, input, select, textarea {
     height: 100%;
 }
 
+.imageInText {
+    width: 80%;
+    height: auto;
+  }
+
+  .genericText{
+    font-size: 12px;
+}
+
+body h1{
+    font-size: 20px;
+}
+
 @media screen and (min-width: 735px) {
     .container {
         display: none;
     }
     .navigation {
-        padding-bottom: 50px;
+        padding-bottom: 75px;
     }
    
     nav li {
@@ -266,11 +279,12 @@ html, button, input, select, textarea {
     nav ul {
         display: flex;
     }
-    nav {
-        transition: all 0.2s ease;
-    }
     nav a {
         opacity: 1;
+    }
+
+    nav ul li{
+        font-size: 20px;
     }
 
     .equipmentDescription{
@@ -278,4 +292,78 @@ html, button, input, select, textarea {
         text-align: center;
     }
 
+    .imageInText {
+        max-width: 60%;
+        height: auto;
+      }
+
+      .genericText{
+        font-size: 25px;
+    }
+
+    body h1{
+        font-size: 35px;
+    }
+
+    .logo-img {
+        height: 70px;
+        margin-left: 20px;
+    }
+
+    nav {
+        top: 90px;
+    }
+
+    header{
+        height: 90px;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    nav ul li{
+        font-size: 30px;
+    }
+
+    #equipmentTable thead tr{
+        font-size: 30px;
+    }
+
+    #equipmentTable thead tr button{
+        font-size: 30px;
+    }
+
+    .sidebar h4{
+        font-size: 30px;
+    }
+
+    .sidebar tr{
+        font-size: 30px;
+    }
+
+    .sidebar tr td button{
+        font-size: 30px;
+    }
+
+    .navigation {
+        padding-bottom: 70px;
+    }
+    .equipmentDescription{
+        font-size: 30px;
+    }
+
+    .genericText{
+        font-size: 30px;
+    }
+
+    body h1{
+        font-size: 45px;
+    }
+
+    nav {
+        top: 110px;
+    }
+
+    header{
+        height: 110px;
+    }
 }
