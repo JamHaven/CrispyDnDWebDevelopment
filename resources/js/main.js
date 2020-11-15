@@ -84,7 +84,7 @@ function addItemShoppingList(btnElement) {
   let clonedItem = parentListItem.cloneNode(true);    //clone the li node -> this removes all eventListeners from childnodes!
   clonedItem.setAttribute("id", parentListItem.getAttribute("id"))
   let btn = clonedItem.getElementsByTagName("button")[0]; //get the button element
-  btn.textContent = "x";
+  btn.textContent = "\u2718";
   btn.addEventListener("click", function () { this.closest("tr").remove(); });   //click event that removes the list element
   document.getElementById("shoppingList").appendChild(clonedItem); //append li element to wishlist
   }
@@ -100,7 +100,40 @@ function isIdInEquipmentTable(idToCheckAgainstTable) {
   return false;
 }
 
+function validateLogin(){
+  var username = document.forms["loginForm"]["Username"].value;
+  var password = document.forms["loginForm"]["Password"].value;
+  var email = document.forms["loginForm"]["Email"].value;
+  console.log(username);
+  console.log(password);
+  console.log(email);
+  if (username == "" || password == "" || email == "") {
+    alert("Name must be filled out");
+    return false;
+  }
 
+  if (!ValidateEmail(email)){
+    alert("Email has an incorrect format.");
+    return false;
+  }
+
+  if(username == "nousername" && password == "nopassword"){
+    window.location.replace("/member.html");
+    return true;
+  }else{
+    alert("Username or Password is false!");
+    return false
+  }
+}
+
+function ValidateEmail(email) 
+{
+ if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email))
+  {
+    return (true)
+  }
+    return (false)
+}
 /*
 function getArmorDetails(jsonEquipment) {
   for (var i = 0; i < myObj.results.length; i++) {

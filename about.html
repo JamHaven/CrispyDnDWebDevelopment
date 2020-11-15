@@ -5,13 +5,50 @@
     <link rel="stylesheet" href=".\resources/css/style.css" />
     <script src=".\resources\js\main.js"></script>
     <div class="navigation" w3-include-html="common/nav.html"></div>
+    <script src="https://kit.fontawesome.com/e255435ced.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <script>
         includeHTML();
     </script>
-    This is the about content!
+    <h2>Member Login</h2>
+    <p>We are egar to tell you more about our services. Just login with the super secret username: "<b>nousername</b>" and
+        password: "<b>nopassword</b>" without the quotes.
+        What's left is for you to also enter your email address and press submit to get to our members area.
+    </p>
+
+    <div class="containerAbout">
+        <form action="javascript:void(0);" name="loginForm">
+            <div class="row">
+                <div class="col-25">
+                    <label for="fname">Username</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="uname" name="Username" placeholder="Username for login" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="lname">Password</label>
+                </div>
+                <div class="col-75">
+                    <input type="password" id="passwd" name="Password" placeholder="Password for login" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="country">E-Mail</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="email" name="Email" placeholder="E-Mail for login" required>
+                </div>
+            </div>
+            <div class="row">
+                <button class="submitButton" onclick="validateLogin()">Submit</button>
+            </div>
+        </form>
+    </div>
 </body>
 
 </html>
