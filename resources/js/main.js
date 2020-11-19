@@ -79,6 +79,7 @@ function addItemShoppingList(btnElement) {
   let parentListItem = btnElement.closest("tr");
   if(isIdInEquipmentTable(parentListItem.getAttribute("id"))){
     console.log("Already in list");
+    alert("Item already in list! Remove it first!");
   }
   else{
   let clonedItem = parentListItem.cloneNode(true);    //clone the li node -> this removes all eventListeners from childnodes!

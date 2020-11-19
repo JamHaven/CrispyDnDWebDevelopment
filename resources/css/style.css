@@ -1,31 +1,25 @@
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
-
 header {
-    height: 70px;
     background-color: #22292F;
-    padding: 10px 0;
+    padding-top: 20px;
     width: 100%;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     justify-content: space-around;
+    margin: 0;
+    padding: 0;
 }
 
 .site-bar {
     display: flex;
     justify-content: space-between;
     padding: 0 15px;
-    width: 70%;
 }
 
 .menu-button {
-    font-size: 2.4em;
     color: #ffffff;
+    font-size: 2.4em;
     line-height: 50px;
 }
 
@@ -35,21 +29,21 @@ body {
 }
 
 .equipmentDescription {
-    font-size: 17px;
     min-height: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 nav {
-    position: absolute;
     background-color: #3D4852;
-    top: 70px;
-    left: 0;
+    position: absolute;
+    top: 77px;
     width: 100%;
 }
 
 nav ul {
-    list-style-type: none;
     display: none;
+    list-style-type: none;
 }
 
 .hidenav {
@@ -65,11 +59,11 @@ nav ul li {
 }
 
 nav ul li a {
-    display: inline-block;
-    padding: 12px;
     color: #DAE1E7;
-    text-decoration: none;
+    display: inline-block;
     letter-spacing: 0.05em;
+    padding: 5px;
+    text-decoration: none;
 }
 
 nav ul li a:hover, nav ul li a:focus, .submitButton:hover {
@@ -80,35 +74,40 @@ nav ul li a:hover, nav ul li a:focus, .submitButton:hover {
     cursor: pointer;
     float: right;
     margin-right: 15px;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 .bar1, .bar2, .bar3 {
-    width: 35px;
-    height: 5px;
     background-color: rgb(247, 242, 242);
+    height: 5px;
     margin: 6px 0;
-    transition: 0.4s;
+    width: 35px;
 }
 
 /* Rotate first bar */
 
 .change .bar1 {
     -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    -ms-transform: rotate(-45deg) translate(-9px, 6px);
     transform: rotate(-45deg) translate(-9px, 6px);
+    
+    transition: transform 230ms ease-out;
 }
 
 /* Fade out the second bar */
 
 .change .bar2 {
     opacity: 0;
+    transition: transform 230ms ease-out;
 }
 
 /* Rotate last bar */
 
 .change .bar3 {
     -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    -ms-transform: rotate(-45deg) translate(-8px, -8px);
     transform: rotate(45deg) translate(-8px, -8px);
+    transition: transform 230ms ease-out;
 }
 
 .buttoninTable {
@@ -116,22 +115,20 @@ nav ul li a:hover, nav ul li a:focus, .submitButton:hover {
 }
 
 table {
-    font-size: 12px;
     border-collapse: separate;
-    border-top: .5rem solid #d4d4d4;
-    border-bottom: .5rem solid #d4d4d4;
     border-spacing: 5px;
-    border-color: grey;
-    margin-top: 1rem;
-    table-layout: auto;
-    overflow-x: scroll;
-    min-width: 50%;
     display: flex;
+    font-size: 12px;
+    justify-content: space-around;
+    margin-top: 1rem;
+    min-width: 50%;
+    overflow-x: scroll;
+    table-layout: auto;
 }
 
-table tr {
-    justify-content: space-evenly;
-    display: flexbox;
+table tr {    
+    display: flex;
+    justify-content: space-between;
 }
 
 .buttonTable:visited, .buttonTable .buttonTable:active {
@@ -139,27 +136,22 @@ table tr {
 }
 
 html, button, select, textarea {
-    font-family: 'Poppins', sans-serif;
     color: #222;
+    font-family: 'Poppins', sans-serif;
 }
 
 .myButton {
     background-color: grey;
     border: none;
-    color: black;
     box-shadow: none;
-    text-shadow: none;
-    display: inline-block;
+    color: black;
     cursor: pointer;
-    color: #222;
+    display: inline-block;
     font-family: Arial;
     font-size: 12px;
-    padding: 6px 10px;
+    padding: 3px 6px;
     text-decoration: none;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    padding-right: 5px;
-    padding-left: 5px;
+    text-shadow: none;
 }
 
 .myButton:hover {
@@ -172,115 +164,114 @@ html, button, select, textarea {
 }
 
 .table_wrapper {
-    justify-content: space-evenly;
+    border-bottom: .5rem solid grey;
+    border-top: .5rem solid grey;
     display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+
+.sidebarContainer{
+    display: flex;
+    justify-content: space-between;
+    min-width: 50%;
 }
 
 .sidebar {
+    border-left: .2rem solid grey;
     font-size: 14px;
-    padding-top: 10px;
-    min-width: 20%;
+    padding-left: 1rem;
 }
 
-.sidebar h4 {
+h4 {
+    display: flex;
     font-size: 15px;
-}
-
-.sidebar.collapsed {
-    width: 0;
-}
-
-.sidebar ul {
-    list-style-type: none;
-    display: none;
-}
-
-.hidesidebar {
-    display: none;
-}
-
-.showsidebar {
-    display: block;
+    justify-content: space-around;
 }
 
 .listcart {
+    border-spacing: 2px;
     font-size: 12px;
 }
 
-.listcart tr td {
-    border: 1px solid black;
+.listcart tr{
+    display: flex;
 }
 
 .listcart tr td button {
-    font-weight: bold;
     display: inline-block;
+    font-weight: bold;
     height: 100%;
 }
 
 .imageInText {
-    width: 80%;
     height: auto;
+    width: 80%;
 }
 
 .genericText {
-    font-size: 12px;
+    font-size: 14px;
+    padding: 8px;
 }
 
-body h1 {
-    font-size: 20px;
+h1 {
+    padding: 8px;
 }
 
 input[type=text],input[type=password], select, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
     border-radius: 4px;
-    resize: vertical;
     font-family: 'Poppins', sans-serif;
+    height: 40px;
+    resize: vertical;
+    width: 100%;
 }
 
 label {
-    padding: 12px 12px 12px 0;
     display: inline-block;
     font-size: 14px;
+    padding: 12px 12px 12px 0;
 }
 
 .submitButton {
     background-color: #3D4852;
-    color: white;
-    padding: 12px 20px;
     border: none;
     border-radius: 4px;
+    color: white;
     cursor: pointer;
     float: right;
     font-family: 'Poppins', sans-serif;
     font-size: large;
+    padding: 12px 20px;
 }
 
 .containerAbout {
-    border-radius: 5px;
+    background-clip: border-box;
     background-color: #f2f2f2;
+    border: 2px solid;
+    border-radius: 20px;
+    margin-left: 8px;
+    margin-right: 8px;
     padding: 20px;
 }
 
 .col-25 {
     float: left;
-    width: 25%;
     margin-top: 6px;
+    width: 25%;
 }
 
 .col-75 {
-    float: left;
-    width: 75%;
+    display: flex;
     margin-top: 6px;
+    width: 100%;
 }
 
 /* Clear floats after the columns */
 
 .row:after {
+    clear: both;
     content: "";
     display: table;
-    clear: both;
     padding-bottom: 10px;
 }
 
@@ -289,134 +280,76 @@ label {
         display: none;
     }
     .navigation {
-        padding-bottom: 75px;
+        padding-bottom: 110px;
     }
     nav li {
-        float: left;
-        padding: 12px;
         color: white;
+        float: left;
+        text-align: center;
         text-decoration: none;
-        font-size: 17px;
         width: 25%;
         /* Four links of equal widths */
-        text-align: center;
     }
     .sidebar {
         top: 136px;
     }
-    .sidebar h4 {
-        font-size: 20px;
+
+    thead {
+        display: inline-table;
     }
-    .sidebar tr {
-        font-size: 20px;
-    }
-    .sidebar tr td button {
-        font-size: 20px;
-    }
-    #equipmentTable thead {
-        display: table-column;
-    }
-    #equipmentTable thead tr {
-        font-size: 20px;
-    }
-    #equipmentTable thead tr button {
-        font-size: 20px;
-    }
+
+
     nav ul {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-around;
     }
     nav a {
         opacity: 1;
     }
-    nav ul li {
-        font-size: 20px;
-    }
+
     .equipmentDescription {
-        font-size: 25px;
+        margin-top: 10px;
         text-align: center;
     }
     .imageInText {
-        max-width: 60%;
-        height: auto;
         float: left;
+        height: auto;
+        max-width: 60%;
     }
-    .genericText {
-        font-size: 25px;
-    }
-    body h1 {
-        font-size: 35px;
-    }
+
     .logo-img {
         height: 70px;
         margin-left: 20px;
     }
     nav {
-        top: 90px;
+        top: 120px;
     }
     header {
         height: 100px;
     }
-    .col-25, .col-75, .submitButton {
-        width: 100%;
+    .col-25,.col-75, .submitButton {
         margin-top: 0;
-        font-size: 20px;
+        width: 100%;
     }
 
-    input[type=text],input[type=password], select, textarea {
-        font-size: 15px;
-    }
 }
 
 @media screen and (min-width: 1500px) {
-    nav ul li {
-        font-size: 30px;
-    }
-    #equipmentTable thead tr {
-        font-size: 30px;
-    }
-    #equipmentTable thead tr button {
-        font-size: 30px;
-    }
-    .sidebar h4 {
-        font-size: 30px;
-    }
-    .sidebar tr {
-        font-size: 30px;
-    }
-    .sidebar tr td button {
-        font-size: 30px;
-    }
+
     .navigation {
         padding-bottom: 70px;
     }
-    .equipmentDescription {
-        font-size: 30px;
-    }
-    .genericText {
-        font-size: 30px;
-    }
-    body h1 {
-        font-size: 45px;
-    }
+
     nav {
-        top: 110px;
+        top: 120px;
     }
     header {
-        height: 150px;
+        height: 120px;
     }
 
     .col-25, .col-75, .submitButton {
-        width: 100%;
         margin-top: 0;
-        font-size: 23px;
+        width: 100%;
     }
 
-    label{
-        font-size: 22px;
-    }
-
-    input[type=text],input[type=password], select, textarea {
-        font-size: 17px;
-    }
 }
