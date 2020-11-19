@@ -157,7 +157,7 @@ function validateLogin() {
   }
 
   if (username == "nousername" && password == "nopassword") {
-    window.location.replace("/member.html");
+    window.location.replace("/html/member.html");
     return true;
   } else {
     modalText.innerHTML = "Username or password is not correct.";
