@@ -66,7 +66,7 @@ nav ul li a {
     text-decoration: none;
 }
 
-nav ul li a:hover, nav ul li a:focus, .submitButton:hover {
+nav ul li a:hover, nav ul li a:focus, .submitButton:hover, .submitButton:focus {
     color: #ce2b1f;
 }
 
@@ -90,7 +90,6 @@ nav ul li a:hover, nav ul li a:focus, .submitButton:hover {
     -webkit-transform: rotate(-45deg) translate(-9px, 6px);
     -ms-transform: rotate(-45deg) translate(-9px, 6px);
     transform: rotate(-45deg) translate(-9px, 6px);
-    
     transition: transform 230ms ease-out;
 }
 
@@ -118,7 +117,6 @@ table {
     border-collapse: separate;
     border-spacing: 5px;
     display: flex;
-    font-size: 12px;
     justify-content: space-around;
     margin-top: 1rem;
     min-width: 50%;
@@ -126,7 +124,7 @@ table {
     table-layout: auto;
 }
 
-table tr {    
+table tr {
     display: flex;
     justify-content: space-between;
 }
@@ -154,7 +152,7 @@ html, button, select, textarea {
     text-shadow: none;
 }
 
-.myButton:hover {
+.myButton:hover, .myButton:focus {
     background-color: #e9e9e9;
 }
 
@@ -171,7 +169,7 @@ html, button, select, textarea {
     margin-top: 1rem;
 }
 
-.sidebarContainer{
+.sidebarContainer {
     display: flex;
     justify-content: space-between;
     min-width: 50%;
@@ -179,7 +177,6 @@ html, button, select, textarea {
 
 .sidebar {
     border-left: .2rem solid grey;
-    font-size: 14px;
     padding-left: 1rem;
 }
 
@@ -191,10 +188,9 @@ h4 {
 
 .listcart {
     border-spacing: 2px;
-    font-size: 12px;
 }
 
-.listcart tr{
+.listcart tr {
     display: flex;
 }
 
@@ -218,14 +214,16 @@ h1 {
     padding: 8px;
 }
 
-input[type=text],input[type=password], select, textarea {
+input[type=text], input[type=password], select, textarea {
     border-radius: 4px;
     font-family: 'Poppins', sans-serif;
     height: 40px;
     resize: vertical;
     width: 100%;
 }
-
+input[type=text]:focus, input[type=password]:focus, select:focus, textarea:focus{
+    background-color: rgb(252, 72, 72);
+}
 label {
     display: inline-block;
     font-size: 14px;
@@ -236,12 +234,17 @@ label {
     background-color: #3D4852;
     border: none;
     border-radius: 4px;
-    color: white;
+    color: #DAE1E7;
     cursor: pointer;
     float: right;
     font-family: 'Poppins', sans-serif;
     font-size: large;
     padding: 12px 20px;
+}
+
+.submitButton:active {
+    position: relative;
+    top: 2px;
 }
 
 .containerAbout {
@@ -275,6 +278,45 @@ label {
     padding-bottom: 10px;
 }
 
+.modal {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+    display: none; /* Hidden by default */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    position: fixed; /* Stay in place */
+    width: 100%; /* Full width */
+    z-index: 1; /* Sit on top */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #22292F;
+    border: 1px solid #888;
+    margin: auto;
+    margin-top: 20%;
+  }
+  .modalTextStyle{
+      color: #DAE1E7;
+      display: flex;
+      justify-content: space-around;
+  }
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 40px;
+    font-weight: bold;
+    padding-right: 10px;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #ce2b1f;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
 @media screen and (min-width: 735px) {
     .container {
         display: none;
@@ -293,12 +335,9 @@ label {
     .sidebar {
         top: 136px;
     }
-
     thead {
         display: inline-table;
     }
-
-
     nav ul {
         display: flex;
         justify-content: space-around;
@@ -306,7 +345,6 @@ label {
     nav a {
         opacity: 1;
     }
-
     .equipmentDescription {
         margin-top: 10px;
         text-align: center;
@@ -316,7 +354,6 @@ label {
         height: auto;
         max-width: 60%;
     }
-
     .logo-img {
         height: 70px;
         margin-left: 20px;
@@ -327,29 +364,24 @@ label {
     header {
         height: 100px;
     }
-    .col-25,.col-75, .submitButton {
+    .col-25, .col-75, .submitButton {
         margin-top: 0;
         width: 100%;
     }
-
 }
 
 @media screen and (min-width: 1500px) {
-
     .navigation {
         padding-bottom: 70px;
     }
-
     nav {
         top: 120px;
     }
     header {
         height: 120px;
     }
-
     .col-25, .col-75, .submitButton {
         margin-top: 0;
         width: 100%;
     }
-
 }

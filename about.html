@@ -9,12 +9,23 @@
 </head>
 
 <body>
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modalText" class="modalTextStyle">Some text in the Modal..</p>
+        </div>
+
+    </div>
     <div class="navigation" data-w3-include-html="common/nav.html"></div>
     <script>
         includeHTML();
     </script>
+
     <h1>Member Login</h1>
-    <p class="genericText">We are egar to tell you more about our services. Just login with the super secret username: "<b>nousername</b>" and
+    <p class="genericText">We are egar to tell you more about our services. Just login with the super secret username:
+        "<b>nousername</b>" and
         password: "<b>nopassword</b>" without the quotes.
         What's left is for you to also enter your email address and press submit to get to our members area.
     </p>
@@ -23,7 +34,7 @@
         <form action="javascript:void(0);" name="loginForm">
             <div class="row">
                 <div class="col-25">
-                    <label >Username</label>
+                    <label>Username</label>
                 </div>
                 <div class="col-75">
                     <input type="text" id="uname" name="Username" placeholder="Username for login" required>
@@ -31,7 +42,7 @@
             </div>
             <div class="row">
                 <div class="col-25">
-                    <label >Password</label>
+                    <label>Password</label>
                 </div>
                 <div class="col-75">
                     <input type="password" id="passwd" name="Password" placeholder="Password for login" required>
@@ -39,7 +50,7 @@
             </div>
             <div class="row">
                 <div class="col-25">
-                    <label >E-Mail</label>
+                    <label>E-Mail</label>
                 </div>
                 <div class="col-75">
                     <input type="text" id="email" name="Email" placeholder="E-Mail for login" required>

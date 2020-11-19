@@ -77,63 +77,100 @@ function queryDnDApiGetArmor() {
 
 function addItemShoppingList(btnElement) {
   let parentListItem = btnElement.closest("tr");
-  if(isIdInEquipmentTable(parentListItem.getAttribute("id"))){
-    console.log("Already in list");
-    alert("Item already in list! Remove it first!");
+  // Get the modal
+  var modal = document.getElementById("myModal");
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+  var modalText = document.getElementById("modalText");
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function () {
+    modal.style.display = "none";
   }
-  else{
-  let clonedItem = parentListItem.cloneNode(true);    //clone the li node -> this removes all eventListeners from childnodes!
-  clonedItem.setAttribute("id", parentListItem.getAttribute("id"))
-  let btn = clonedItem.getElementsByTagName("button")[0]; //get the button element
-  btn.textContent = "\u2718";
-  btn.addEventListener("click", function () { this.closest("tr").remove(); });   //click event that removes the list element
-  document.getElementById("shoppingList").appendChild(clonedItem); //append li element to wishlist
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+
+  if (isIdInEquipmentTable(parentListItem.getAttribute("id"))) {
+    modalText.innerHTML = "Item already in list! Remove it first!";
+    modal.style.display = "block";
+  }
+  else {
+    let clonedItem = parentListItem.cloneNode(true);    //clone the li node -> this removes all eventListeners from childnodes!
+    clonedItem.setAttribute("id", parentListItem.getAttribute("id"))
+    let btn = clonedItem.getElementsByTagName("button")[0]; //get the button element
+    btn.textContent = "\u2718";
+    btn.addEventListener("click", function () { this.closest("tr").remove(); });   //click event that removes the list element
+    document.getElementById("shoppingList").appendChild(clonedItem); //append li element to wishlist
   }
 }
 
 function isIdInEquipmentTable(idToCheckAgainstTable) {
   var children = document.querySelectorAll("#shoppingList tr");
   for (var i = 0; i < children.length; i++) {
-    if(idToCheckAgainstTable == children[i].id){
+    if (idToCheckAgainstTable == children[i].id) {
       return true;
     }
   }
   return false;
 }
 
-function validateLogin(){
+function validateLogin() {
   var username = document.forms["loginForm"]["Username"].value;
   var password = document.forms["loginForm"]["Password"].value;
   var email = document.forms["loginForm"]["Email"].value;
-  console.log(username);
-  console.log(password);
-  console.log(email);
+
+  // Get the modal
+  var modal = document.getElementById("myModal");
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+  var modalText = document.getElementById("modalText");
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function () {
+    modal.style.display = "none";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+
   if (username == "" || password == "" || email == "") {
-    alert("Name must be filled out");
+    modalText.innerHTML = "Please fill out all fields.";
+    modal.style.display = "block";
     return false;
   }
 
-  if (!ValidateEmail(email)){
-    alert("Email has an incorrect format.");
+  if (!ValidateEmail(email)) {
+    modalText.innerHTML = "The E-Mail address is not valid.";
+    modal.style.display = "block";
     return false;
   }
 
-  if(username == "nousername" && password == "nopassword"){
+  if (username == "nousername" && password == "nopassword") {
     window.location.replace("/member.html");
     return true;
-  }else{
-    alert("Username or Password is false!");
+  } else {
+    modalText.innerHTML = "Username or password is not correct.";
+    modal.style.display = "block";
     return false
   }
 }
 
-function ValidateEmail(email) 
-{
- if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email))
-  {
+function ValidateEmail(email) {
+  if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)) {
     return (true)
   }
-    return (false)
+  return (false)
 }
 /*
 function getArmorDetails(jsonEquipment) {
