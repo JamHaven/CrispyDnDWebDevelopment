@@ -172,34 +172,22 @@ function ValidateEmail(email) {
   }
   return (false)
 }
-/*
-function getArmorDetails(jsonEquipment) {
-  for (var i = 0; i < myObj.results.length; i++) {
-    //console.log(myObj.results[element].url);
-    equipmentXhrList[i] = new XMLHttpRequest();
-    equipmentXhrList[i].open('GET', 'https://www.dnd5eapi.co' + myObj.results[i].url)
-    equipmentXhrList[i].send();
-    equipmentXhrList[i].onreadystatechange = function () {
-      var DONE = 4; // readyState 4 means the request is done.
-      var OK = 200; // status 200 is a successful return.
-      if (equipmentXhrList[i].readyState === DONE) {
-        if (equipmentXhrList[i].status === OK) {
-          var equipmentResponse = JSON.parse(equipmentXhrList[i].responseText);
-          console.log(equipmentResponse);
-          if (equipmentResponse.equipment_category.index == "armor") {
-            var row = table.insertRow(-1);
-            row.insertCell(0).innerHTML = equipmentResponse.name;
-            row.insertCell(1).innerHTML = equipmentResponse.armor_category;
-            row.insertCell(2).innerHTML = equipmentResponse.armor_class.base;
-            row.insertCell(3).innerHTML = equipmentResponse.str_minimum;
-            row.insertCell(4).innerHTML = equipmentResponse.stealth_disadvantage;
-            row.insertCell(5).innerHTML = equipmentResponse.weight;
-            row.insertCell(6).innerHTML = equipmentResponse.cost.quantity + " " + equipmentResponse.cost.unit;
-          }
-        } else {
-          console.log('Error: ' + equipmentXhrList.status); // An error occurred during the request.
-        }
+
+function searchTable() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("searchInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("equipmentTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
       }
-    };
+    }       
   }
-}*/
+}

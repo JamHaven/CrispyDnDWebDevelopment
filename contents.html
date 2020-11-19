@@ -24,10 +24,19 @@
         includeHTML();
         queryDnDApiGetArmor();
     </script>
-<h1>Equipment shop</h1>
+    <h1>Equipment shop</h1>
     <div class="equipmentDescription">
-        On this site you can choose which equipment you would like to add to your cart! Since we don't like horders, you can only add a single item of a type to the cart.
+        On this site you can choose which equipment you would like to add to your cart! Since we don't like horders, you
+        can only add a single item of a type to the cart.
         But don't worry, you can also remove it from the list again.
+    </div>
+    <h2>Search</h2>
+    <div >
+        <div class="containerSearch">
+            <i class="fas fa-search" style="font-size: 40px;" title="Search icon"></i>
+            <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search for Equipment.."
+                title="Type in an equipment">
+        </div>
     </div>
     <div class="table_wrapper">
         <table id="equipmentTable">
@@ -42,11 +51,11 @@
             </tbody>
         </table>
         <div class="sidebarContainer">
-        <div class="sidebar">
-            <h4>Shopping List</h4>
-            <div class="listcart" id="shoppingList"></div>
+            <div class="sidebar">
+                <h4>Shopping List</h4>
+                <div class="listcart" id="shoppingList"></div>
+            </div>
         </div>
-    </div>
     </div>
 </body>
 

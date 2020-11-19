@@ -210,6 +210,11 @@ h4 {
     padding: 8px;
 }
 
+.containerSearch{
+    display: flex;
+    justify-content: space-around;
+}
+
 h1 {
     padding: 8px;
 }
