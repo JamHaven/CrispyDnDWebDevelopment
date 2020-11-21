@@ -124,7 +124,7 @@ function validateLogin() {
   var username = document.forms["loginForm"]["Username"].value;
   var password = document.forms["loginForm"]["Password"].value;
   var email = document.forms["loginForm"]["Email"].value;
-
+  var age = document.forms["loginForm"]["Age"].value;
   // Get the modal
   var modal = document.getElementById("myModal");
 
@@ -144,8 +144,26 @@ function validateLogin() {
     }
   }
 
-  if (username == "" || password == "" || email == "") {
+  if (username == "" || password == "" || email == "" || age == "") {
     modalText.innerHTML = "Please fill out all fields.";
+    modal.style.display = "block";
+    return false;
+  }
+
+  if(isNaN(age)){
+    modalText.innerHTML = "Age is not a number.";
+    modal.style.display = "block";
+    return false;
+  }
+
+  if(age < 16){
+    modalText.innerHTML = "You need to be at least 16 to sign up.";
+    modal.style.display = "block";
+    return false;
+  }
+
+  if(age > 200){
+    modalText.innerHTML = "We are pretty confident you are not that old ;)";
     modal.style.display = "block";
     return false;
   }
